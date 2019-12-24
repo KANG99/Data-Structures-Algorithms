@@ -32,10 +32,9 @@ class _DoublyLinkedBase:
         successor = node._next
         predecessor._next = successor
         successor._prev = predecessor
-        self._size += 1
+        self._size -= 1
         element = node._element
-        node._element,node._prev,node._next = None
+        node._element=node._prev=node._next = None
         return element
 
     
-
