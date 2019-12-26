@@ -55,6 +55,16 @@ class FavoritesList:
             walk = self._data.after(walk)
             
 
-
-
+if __name__ == '__main__':
+    
+    fl = FavoritesList()
+    fl.access('python')
+    fl.access('java')
+    fl.access('git')
+    fl.access('sql')
+    fl.access('python')
+    fl.access('python')
+    fl.access('git')
+    for f in fl.top(3):
+        print(f)
     
