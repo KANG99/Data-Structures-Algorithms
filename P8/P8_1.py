@@ -61,7 +61,7 @@ class Tree:
             return 0
         else:
             return 1 + max(self._height2(c) for c in self.children(p))
-    def height(self,p):
+    def height(self,p=None):
         if p is None:
             p =self.root
         return self._height2(p)
