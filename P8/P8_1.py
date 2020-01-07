@@ -1,3 +1,5 @@
+from P7_2 import LinkedQueue
+
 class Tree:
 
     class Position:
@@ -65,7 +67,72 @@ class Tree:
         if p is None:
             p =self.root
         return self._height2(p)
+    
+    #基于迭代树的所有位置的所有元素的迭代机制
+    def __iter__(self):
+        for p in self.positions():
+            yield p
 
-        
+    #树的所有位置的迭代机制
+    def positions(self):
+        return self.preorder()
+
+    #先序遍历
+    '''
+    Algorithm preorder(T,p):
+        perform the "visit" action for position p
+        for each child c i T.children(p) do
+            preorder(T,c)
+    '''
+    def preorder(self):
+        if not self.is_empty():
+            for p in self._subtree_preorder(self.root()):
+                yield p
+
+    def _subtree_preorder(self,p):
+        yield p
+        for c in self.children(p):
+            for other in self._subtree_preorder(c):
+                yield other
+
+    #后续遍历
+    '''
+    Algorithm postorder(T,p):
+        for each child c i T.children(p) do
+            postorder(T,c)
+        perform the "visit" action for position p
+    '''
+    def postorder(self):
+        if not self.is_empty():
+            for p in self._subtree_postorder(self.root()):
+                yield p
+
+    def _subtree_postorder(self,p):
+        for c in self.children(p):
+            for other in self._subtree_postorder(c):
+                yield other
+        yield p
+    
+    #广度优先遍历
+    '''
+    Algorithm breadthfirst(T):
+        Initialize queue Q to contains T.root()
+        while Q not empty() do
+            p = Q.dequeue()
+            perform the "visit" action for position p 
+            for each child c in T.childern(p):
+                Q.enqueue(c)  
+
+    '''
+    def breadthfirst(self):
+        if not self.is_empty():
+            q = LinkedQueue()
+            q.enqueue(self.root())
+            while not q.is_empty():
+                p = q.dequeue()
+                yield p
+                for c in self.children(p):
+                    q.enqueue(c)
+    
 
     
