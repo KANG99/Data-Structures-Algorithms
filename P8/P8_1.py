@@ -81,7 +81,7 @@ class Tree:
     '''
     Algorithm preorder(T,p):
         perform the "visit" action for position p
-        for each child c i T.children(p) do
+        for each child c in T.children(p) do
             preorder(T,c)
     '''
     def preorder(self):
@@ -98,7 +98,7 @@ class Tree:
     #后续遍历
     '''
     Algorithm postorder(T,p):
-        for each child c i T.children(p) do
+        for each child c in T.children(p) do
             postorder(T,c)
         perform the "visit" action for position p
     '''

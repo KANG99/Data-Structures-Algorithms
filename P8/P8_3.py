@@ -25,9 +25,9 @@ class LinkedBinaryTree(BinaryTree):
     def _validate(self,p):
         if not isinstance(p,self.Position):
             raise TypeError('p must be proper Position type')
-        if p.container is not self:
+        if p._container is not self:
             raise ValueError('p dose not belong to this container')
-        if p._node.parent is p._node:
+        if p._node._parent is p._node:
             raise ValueError('p is no longer valid')
         return p._node
     
