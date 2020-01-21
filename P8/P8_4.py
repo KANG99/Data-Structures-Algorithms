@@ -35,7 +35,7 @@ if __name__ == '__main__':
     bt._add_root("怪诞行为学")
     bt._add_left(bt.root(),"金钱的诱惑")
     bt._add_left(bt.left(bt.root()),"激励的动机")
-    bt._add_right(bt.left(bt.root()),"社会压力下的时常")
+    bt._add_right(bt.left(bt.root()),"社会压力下的市场")
     bt._add_right(bt.root(),"工作的意义")
     preoder_indent(bt,bt.root(),0)
     print()
