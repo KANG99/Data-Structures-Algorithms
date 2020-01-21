@@ -27,15 +27,15 @@ class ExpressionTree(LinkedBinaryTree):
             self._parenthesize_recur(self.right(p),result)
             result.append(')')
 
-    #表达树的评估
-    '''
-    Algorithmn evaluate_recur(p):
-        if p is a leaf then
-            return the value stored at p
-        else 
-            let o be the operator stored at p 
-            x = evaluate_recur(left(p))
-            y = evaluate_recur(right(p))
-            return x o y
+#表达树的评估
+'''
+Algorithmn evaluate_recur(p):
+    if p is a leaf then
+        return the value stored at p
+    else 
+        let o be the operator stored at p 
+        x = evaluate_recur(left(p))
+        y = evaluate_recur(right(p))
+        return x o y
 
-    '''
+'''
